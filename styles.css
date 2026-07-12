@@ -1,0 +1,380 @@
+/* ==========================================================================
+   HYROX Trainer – styles
+      Palette: dark surface, red accent (brand), following dataviz skill
+         conventions for chart chrome/ink.
+            ========================================================================== */
+
+            :root {
+              --bg: #0d0d0d;
+                --surface: #1a1a19;
+                  --surface-2: #222220;
+                    --card-border: rgba(255,255,255,0.10);
+                      --text-primary: #ffffff;
+                        --text-secondary: #c3c2b7;
+                          --text-muted: #898781;
+                            --accent: #e34948;
+                              --accent-dark: #b93231;
+                                --accent-soft: rgba(227,73,72,0.15);
+                                  --good: #0ca30c;
+                                    --gridline: #2c2c2a;
+                                      --radius: 14px;
+                                        --max-width: 640px;
+                                          font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+                                          }
+
+                                          * { box-sizing: border-box; }
+
+                                          html, body {
+                                            margin: 0;
+                                              padding: 0;
+                                                background: var(--bg);
+                                                  color: var(--text-primary);
+                                                    -webkit-tap-highlight-color: transparent;
+                                                    }
+
+                                                    body {
+                                                      padding-bottom: 48px;
+                                                      }
+
+                                                      #app {
+                                                        max-width: var(--max-width);
+                                                          margin: 0 auto;
+                                                            padding: 0 16px;
+                                                            }
+
+                                                            h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -0.02em; }
+
+                                                            button {
+                                                              font-family: inherit;
+                                                                cursor: pointer;
+                                                                  border: none;
+                                                                    border-radius: 10px;
+                                                                      font-weight: 700;
+                                                                      }
+
+                                                                      input, select {
+                                                                        font-family: inherit;
+                                                                          background: var(--surface-2);
+                                                                            border: 1px solid var(--card-border);
+                                                                              color: var(--text-primary);
+                                                                                border-radius: 8px;
+                                                                                  padding: 8px 10px;
+                                                                                    font-size: 15px;
+                                                                                    }
+                                                                                    input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* ---------- Top bar ---------- */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0 10px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 20;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.brand .mark {
+    width: 30px; height: 30px;
+    background: var(--accent);
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900;
+    font-size: 16px;
+}
+.brand h1 { font-size: 18px; }
+.brand .sub { color: var(--text-muted); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+
+.user-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    padding: 6px 8px 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+.user-pill .switch-btn {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+}
+
+/* ---------- Auth / onboarding screens ---------- */
+.centered-screen {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 0;
+}
+.hero {
+    text-align: center;
+    margin-bottom: 28px;
+}
+.hero .mark-lg {
+    width: 64px; height: 64px;
+    background: var(--accent);
+    border-radius: 16px;
+    margin: 0 auto 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 34px; font-weight: 900;
+}
+.hero h1 { font-size: 26px; }
+.hero p { color: var(--text-secondary); margin-top: 6px; font-size: 14px; }
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 18px;
+}
+
+.profile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+.profile-btn {
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    text-align: left;
+}
+.profile-btn:active { background: var(--surface-2); }
+.profile-btn .avatar {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+    margin-right: 10px;
+}
+.profile-btn .name-block { display: flex; align-items: center; flex: 1; }
+.profile-btn .meta { color: var(--text-muted); font-size: 12px; }
+.profile-btn .delete-x {
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 18px;
+    padding: 4px 8px;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 14px 18px;
+    font-size: 15px;
+    width: 100%;
+    border-radius: var(--radius);
+}
+.btn-primary:active { background: var(--accent-dark); }
+.btn-secondary {
+    background: var(--surface-2);
+    color: var(--text-primary);
+    padding: 12px 18px;
+    font-size: 14px;
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+}
+
+.form-field { margin-bottom: 14px; display: flex; flex-direction: column; gap: 6px; }
+.form-field label { font-size: 12px; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.form-field input, .form-field select { width: 100%; padding: 12px; font-size: 15px; }
+.form-row { display: flex; gap: 10px; }
+.form-row .form-field { flex: 1; }
+.field-error { color: var(--accent); font-size: 12px; display: none; }
+
+/* ---------- Section headers ---------- */
+.section {
+    margin-top: 28px;
+}
+.section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.section-head h2 { font-size: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+.section-head .section-sub { color: var(--text-muted); font-size: 12px; }
+
+/* ---------- Path / trail ---------- */
+.path {
+    position: relative;
+    padding-left: 34px;
+}
+.path::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    background: linear-gradient(var(--accent), var(--gridline));
+    border-radius: 3px;
+    opacity: 0.55;
+}
+
+.node {
+    position: relative;
+    margin-bottom: 14px;
+}
+.node .dot {
+    position: absolute;
+    left: -34px;
+    top: 0;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    border: 2px solid var(--bg);
+    z-index: 2;
+}
+
+/* run node: compact row, time input to the right of the path */
+.node.run {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 32px;
+}
+.node.run .dot { background: var(--surface-2); color: var(--text-secondary); font-size: 13px; }
+.node.run .run-label { flex: 1; font-size: 13px; color: var(--text-secondary); }
+.node.run .run-label b { color: var(--text-primary); display: block; font-size: 13px; }
+.node.run .time-input {
+    width: 92px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+.node.run.filled .dot { background: var(--good); color: white; }
+
+/* station node: card with icon + inputs */
+.node.station .dot { background: var(--accent); font-size: 17px; }
+.station-card {
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 14px;
+}
+.station-card .station-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+.station-card .station-title-row h3 { font-size: 15px; }
+.station-card .station-title-row .distance { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+.station-card .hint { font-size: 11px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4; }
+.station-inputs { display: flex; gap: 10px; }
+.station-inputs .form-field { margin-bottom: 0; }
+.station-inputs input[type="number"] { width: 100%; }
+.level-row { display: flex; gap: 4px; flex-wrap: wrap; }
+.level-btn {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    background: var(--surface-2);
+    color: var(--text-secondary);
+    border: 1px solid var(--card-border);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0;
+}
+.level-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+.node.station.filled .dot { box-shadow: 0 0 0 3px var(--accent-soft); }
+
+/* ---------- Summary ---------- */
+.summary-list {
+    display: flex;
+    flex-direction: column;
+}
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gridline);
+    font-size: 13px;
+}
+.summary-row .label { color: var(--text-secondary); }
+.summary-row .value { font-variant-numeric: tabular-nums; font-weight: 600; }
+.summary-row.empty .value { color: var(--text-muted); font-weight: 400; }
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 14px;
+    margin-top: 4px;
+}
+.summary-total .label { font-size: 13px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+.summary-total .value { font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+/* ---------- Save bar ---------- */
+.save-bar { margin-top: 18px; }
+.save-msg {
+    text-align: center;
+    color: var(--good);
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 600;
+    min-height: 18px;
+}
+
+/* ---------- Chart ---------- */
+.viz-root {
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 16px 12px 10px;
+}
+.chart-empty {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    padding: 30px 10px;
+}
+#progressChart { max-height: 220px; }
+
+/* ---------- History ---------- */
+.history-list { display: flex; flex-direction: column; gap: 8px; }
+.history-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+.history-row .date { font-size: 13px; font-weight: 700; }
+.history-row .date .weekday { color: var(--text-muted); font-weight: 500; font-size: 11px; display: block; }
+.history-row .duration { font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--accent); }
+.history-row .del-btn { background: transparent; color: var(--text-muted); font-size: 16px; padding: 4px 6px; margin-left: 8px; }
+.history-empty { color: var(--text-muted); font-size: 13px; text-align: center; padding: 18px 0; }
+
+.footer-note {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 11px;
+    margin-top: 36px;
+    line-height: 1.6;
+}
+
+@media (min-width: 480px) {
+    .node.run .time-input { width: 110px; }
+}
