@@ -65,14 +65,39 @@
 
 /* ---------- Top bar ---------- */
 .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 0 10px;
-    position: sticky;
-    top: 0;
-    background: var(--bg);
-    z-index: 20;
+     padding: 18px 0 10px;
+     position: sticky;
+     top: 0;
+     background: var(--bg);
+     z-index: 20;
+}
+.topbar-row {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+.topbar-time {
+     display: flex;
+     align-items: baseline;
+     justify-content: center;
+     gap: 10px;
+     margin-top: 10px;
+     padding-top: 10px;
+     border-top: 1px solid var(--gridline);
+}
+.topbar-time-label {
+     font-size: 12px;
+     color: var(--text-muted);
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: 0.06em;
+}
+.topbar-time-value {
+     font-size: 32px;
+     font-weight: 900;
+     font-variant-numeric: tabular-nums;
+     color: var(--accent);
+     line-height: 1;
 }
 .brand {
     display: flex;
@@ -321,8 +346,8 @@
     padding-top: 14px;
     margin-top: 4px;
 }
-.summary-total .label { font-size: 13px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
-.summary-total .value { font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.summary-total .label { font-size: 14px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+.summary-total .value { font-size: 44px; font-weight: 900; font-variant-numeric: tabular-nums; }
 
 /* ---------- Save bar ---------- */
 .save-bar { margin-top: 18px; }
