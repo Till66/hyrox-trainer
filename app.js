@@ -233,8 +233,7 @@ function renderMain(profile) {
                                                                                                                           </div>
                                                                                                                                 </div>
                                                                                                                                       <div class="topbar-time">
-                                                                                                                                              <span class="topbar-time-label">Gesamtzeit</span>
-                                                                                                                                                      <span class="topbar-time-value" id="topbar-total-value">–</span>
+                                                                                                                                                                                                                                                                  <span class="topbar-time-value" id="topbar-total-value">–</span>
                                                                                                                                                             </div>
                                                                                                                                                                 </div>
                                                                                                                                                                 
