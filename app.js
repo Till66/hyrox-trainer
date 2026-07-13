@@ -218,20 +218,26 @@ function renderMain(profile) {
     const sessions = loadSessions(profile.id).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
 
   app.innerHTML = `
-      <div class="topbar">
-            <div class="brand">
-                    <div class="mark">H</div>
-                            <div>
-                                      <h1>HYROX Trainer</h1>
-                                                <div class="sub">Trainingstracker</div>
-                                                        </div>
-                                                              </div>
-                                                                    <div class="user-pill">
-                                                                            <span>${escapeHtml(profile.username)}</span>
-                                                                                    <button class="switch-btn" data-action="switch-profile">Wechseln</button>
-                                                                                          </div>
-                                                                                              </div>
-
+          <div class="topbar">
+                <div class="topbar-row">
+                        <div class="brand">
+                                  <div class="mark">H</div>
+                                            <div>
+                                                        <h1>HYROX Trainer</h1>
+                                                                    <div class="sub">Trainingstracker</div>
+                                                                              </div>
+                                                                                      </div>
+                                                                                              <div class="user-pill">
+                                                                                                        <span>${escapeHtml(profile.username)}</span>
+                                                                                                                  <button class="switch-btn" data-action="switch-profile">Wechseln</button>
+                                                                                                                          </div>
+                                                                                                                                </div>
+                                                                                                                                      <div class="topbar-time">
+                                                                                                                                              <span class="topbar-time-label">Gesamtzeit</span>
+                                                                                                                                                      <span class="topbar-time-value" id="topbar-total-value">–</span>
+                                                                                                                                                            </div>
+                                                                                                                                                                </div>
+                                                                                                                                                                
                                                                                                   <div class="section">
                                                                                                         <div class="section-head">
                                                                                                                 <h2>Dein Pfad</h2>
@@ -405,9 +411,12 @@ function updateSummary(path) {
           if (seconds) total += seconds;
           return `<div class="summary-row ${seconds ? "" : "empty"}"><span class="label">${escapeHtml(label)}</span><span class="value">${formatSecondsToClock(seconds)}</span></div>`;
     });
-    listEl.innerHTML = rows.join("");
-    totalEl.textContent = total > 0 ? formatSecondsToClock(total) : "–";
-    return total;
+      listEl.innerHTML = rows.join("");
+     const totalText = total > 0 ? formatSecondsToClock(total) : "–";
+     totalEl.textContent = totalText;
+     const topbarTotalEl = document.getElementById("topbar-total-value");
+     if (topbarTotalEl) topbarTotalEl.textContent = totalText;
+     return total;
 }
 
 function computeTotal(path) {
